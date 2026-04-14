@@ -166,6 +166,10 @@ nav[aria-label="Primary"]{display:flex;flex:1;min-width:0}
 table.tbl{width:100%;border-collapse:collapse;font-size:.875rem}
 table.tbl th{background:var(--nci-blue);color:#fff;padding:var(--sp-3) var(--sp-4);text-align:left;font-weight:700;font-size:.8rem}
 table.tbl td{padding:10px var(--sp-4);border-bottom:1px solid var(--gray-5);color:var(--gray-70);vertical-align:top;line-height:1.45}
+table.tbl.embedded-tbl{table-layout:fixed}
+table.tbl.embedded-tbl col:nth-child(1){width:34%}
+table.tbl.embedded-tbl col:nth-child(2){width:36%}
+table.tbl.embedded-tbl col:nth-child(3){width:30%}
 table.tbl.embedded-tbl td:nth-child(2){text-align:left}
 table.tbl tbody tr:last-child td{border-bottom:none}
 table.tbl tbody tr:hover td{background:var(--nci-blue-xlt)}
@@ -895,11 +899,13 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
     </table></div>
 
     <h3 style="margin-top:var(--sp-6)">Embedded Team Members</h3>
-    <div class="tbl-w"><table class="tbl" aria-hidden="true">
+    <div class="tbl-w"><table class="tbl embedded-tbl" aria-hidden="true">
+      <colgroup><col><col><col></colgroup>
       <thead><tr><th>Name</th><th>Title</th><th>Email</th></tr></thead>
     </table></div>
     <h4 style="margin-top:var(--sp-5)">RNA Biology Laboratory</h4>
     <div class="tbl-w"><table class="tbl embedded-tbl" aria-label="RNA Biology Laboratory embedded team members">
+      <colgroup><col><col><col></colgroup>
       <tbody>
         <tr><td>Wilfried Guiblet, Ph.D.</td><td>RNA Biology Laboratory</td><td><a href="mailto:wilfried.guiblet@nih.gov">wilfried.guiblet@nih.gov</a></td></tr>
       </tbody>
@@ -907,6 +913,7 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
 
     <h4 style="margin-top:var(--sp-5)">Genetics Branch: OMICS Facility</h4>
     <div class="tbl-w"><table class="tbl embedded-tbl" aria-label="Genetics Branch OMICS Facility embedded team members">
+      <colgroup><col><col><col></colgroup>
       <tbody>
         <tr><td>Erica Pehrsson, Ph.D.</td><td>Genetics Branch: OMICS Facility</td><td><a href="mailto:erica.pehrsson@nih.gov">erica.pehrsson@nih.gov</a></td></tr>
         <tr><td>Shaoli Das, Ph.D.</td><td>Genetics Branch: OMICS Facility</td><td><a href="mailto:shaoli.das@nih.gov">shaoli.das@nih.gov</a></td></tr>
@@ -915,6 +922,7 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
 
     <h4 style="margin-top:var(--sp-5)">Genetics Branch: OncoGenomics</h4>
     <div class="tbl-w"><table class="tbl embedded-tbl" aria-label="Genetics Branch OncoGenomics embedded team members">
+      <colgroup><col><col><col></colgroup>
       <tbody>
         <tr><td>Vineela Gangalapudi, M.Sc.</td><td>Genetics Branch: OncoGenomics</td><td><a href="mailto:vineela.gangalapudi@nih.gov">vineela.gangalapudi@nih.gov</a></td></tr>
         <tr><td>Xinyu Wen, M.Sc.</td><td>Genetics Branch: OncoGenomics</td><td><a href="mailto:xinyu.wen@nih.gov">xinyu.wen@nih.gov</a></td></tr>
@@ -923,6 +931,7 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
 
     <h4 style="margin-top:var(--sp-5)">Lab of Pathology: NCI-COMPASS</h4>
     <div class="tbl-w"><table class="tbl embedded-tbl" aria-label="Lab of Pathology NCI-COMPASS embedded team members">
+      <colgroup><col><col><col></colgroup>
       <tbody>
         <tr><td>Kristin Valdez, M.Sc.</td><td>Lab of Pathology: NCI-COMPASS</td><td><a href="mailto:kristin.valdez@nih.gov">kristin.valdez@nih.gov</a></td></tr>
         <tr><td>Robert Schultz, Ph.D.</td><td>Lab of Pathology: NCI-COMPASS</td><td><a href="mailto:rob.schultz@nih.gov">rob.schultz@nih.gov</a></td></tr>
@@ -931,6 +940,7 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
 
     <h4 style="margin-top:var(--sp-5)">Pediatric Oncology Branch</h4>
     <div class="tbl-w"><table class="tbl embedded-tbl" aria-label="Pediatric Oncology Branch embedded team members">
+      <colgroup><col><col><col></colgroup>
       <tbody>
         <tr><td>Vidhur Daulatabad, Ph.D.</td><td>Pediatric Oncology Branch: MyPART/POB</td><td><a href="mailto:vidhur.daulatabad@nih.gov">vidhur.daulatabad@nih.gov</a></td></tr>
         <tr><td>Ying Wu, Ph.D.</td><td>Pediatric Oncology Branch: CCDI/TEGS</td><td><a href="mailto:ying.wu@nih.gov">ying.wu@nih.gov</a></td></tr>
@@ -939,6 +949,7 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
 
     <h4 style="margin-top:var(--sp-5)">SpITR: Spatial Imaging Technology Resource</h4>
     <div class="tbl-w"><table class="tbl embedded-tbl" aria-label="SpITR embedded team members">
+      <colgroup><col><col><col></colgroup>
       <tbody>
         <tr><td>Edmund Cauley, M.Sc.</td><td>SpITR: Spatial Imaging Technology Resource</td><td><a href="mailto:ned.cauley@nih.gov">ned.cauley@nih.gov</a></td></tr>
       </tbody>
