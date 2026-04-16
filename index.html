@@ -712,27 +712,12 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
         <div>
           <h3>ATAC-seq</h3>
           <ul>
-            <li><strong>Include sufficient biological replicates:</strong> &ge;2 minimum, &ge;3 preferred for robust and reproducible accessibility profiles.</li>
-            <li><strong>Keep replicates consistent:</strong> Process all samples under identical conditions (same protocol, buffers, timing, and operator if possible).</li>
-            <li><strong>Do not substitute technical replicates:</strong> They assess technical variability but do not capture biological differences.</li>
-            <li><strong>Ensure high cell viability:</strong> Use samples with &gt;90% viability, since dead cells increase background and mitochondrial DNA contamination.</li>
-            <li><strong>Optimize nuclei isolation:</strong> Gentle and consistent nuclei preparation is critical; poor prep leads to high mitochondrial reads and low-quality signal.</li>
-            <li><strong>Use appropriate input cell numbers:</strong> Typically 50K-100K cells for bulk ATAC-seq; low-input protocols require extra care and optimization.</li>
-            <li><strong>Minimize mitochondrial contamination:</strong> Optimize lysis conditions and washing steps to reduce mtDNA carryover.</li>
-            <li><strong>Plan sequencing strategy carefully:</strong> Paired-end sequencing is required to capture fragment size distribution and nucleosome positioning.</li>
-            <li><strong>Ensure adequate sequencing depth:</strong> Approximately 50M paired-end reads per sample is optimal; &ge;15-20M usable fragments is a practical minimum.</li>
-            <li><strong>Avoid over-amplification during library prep:</strong> Excessive PCR introduces bias and reduces library complexity.</li>
-            <li><strong>Monitor library complexity early:</strong> Low complexity reduces usable signal and affects downstream interpretation.</li>
-            <li><strong>Include appropriate controls if needed:</strong> Consider spike-ins for experiments expecting global chromatin changes.</li>
-            <li><strong>Maintain consistency in reference materials:</strong> Use the same genome build and annotation across all samples.</li>
-            <li><strong>Standardize protocols across samples:</strong> Use the same kits, enzymes (Tn5), and workflows to reduce variability.</li>
-            <li><strong>Minimize batch effects:</strong> Distribute samples across library-prep batches and sequencing lanes.</li>
-            <li><strong>Balance experimental design:</strong> Avoid confounding batch with biological conditions; randomize samples where possible.</li>
-            <li><strong>Plan for expected signal features:</strong> ATAC-seq captures nucleosome-free regions and nucleosome phasing; ensure the design supports this resolution.</li>
-            <li><strong>Preserve fragment size information:</strong> Short fragments from open chromatin and periodic larger fragments from mono- and di-nucleosomes are biologically meaningful.</li>
-            <li><strong>Use fresh or properly preserved samples:</strong> Degradation affects chromatin accessibility and data quality.</li>
-            <li><strong>Consider cell-type heterogeneity:</strong> Bulk ATAC-seq averages signals, so mixed populations may obscure true accessibility patterns.</li>
-            <li><strong>Consider alternative approaches if needed:</strong> Use single-cell ATAC-seq for heterogeneous samples or rare populations.</li>
+            <li><strong>Replication and consistency:</strong> Use biological replicates (&ge;2 minimum, &ge;3 preferred), process all samples under identical conditions, and do not rely on technical replicates to represent biological variability.</li>
+            <li><strong>Sample quality and nuclei preparation:</strong> Use fresh or properly preserved samples with high cell viability (&gt;90%), optimize nuclei isolation carefully, and minimize mitochondrial contamination to reduce background and improve signal quality.</li>
+            <li><strong>Input and library quality:</strong> Use appropriate input cell numbers, avoid PCR over-amplification, and monitor library complexity early because low-complexity libraries reduce usable signal and affect downstream interpretation.</li>
+            <li><strong>Sequencing design and signal resolution:</strong> Use paired-end sequencing to capture fragment size distribution and nucleosome positioning, aim for adequate depth (approximately 50M paired-end reads per sample is optimal), and preserve short and periodic larger fragments because both are biologically informative.</li>
+            <li><strong>Controls, references, and standardization:</strong> Consider spike-ins when global chromatin changes are expected, use the same genome build and annotation across samples, and standardize kits, enzymes, and workflows throughout the study.</li>
+            <li><strong>Bias reduction and study design:</strong> Minimize batch effects by distributing samples across library-prep batches and sequencing lanes, avoid confounding batch with biological condition, account for cell-type heterogeneity in bulk assays, and consider single-cell ATAC-seq for heterogeneous samples or rare populations.</li>
           </ul>
         </div>
         <div>
