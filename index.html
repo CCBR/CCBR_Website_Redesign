@@ -710,13 +710,49 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
           </ul>
         </div>
         <div>
+          <h3>ATAC-seq</h3>
+          <ul>
+            <li><strong>Include sufficient biological replicates:</strong> &ge;2 minimum, &ge;3 preferred for robust and reproducible accessibility profiles.</li>
+            <li><strong>Keep replicates consistent:</strong> Process all samples under identical conditions (same protocol, buffers, timing, and operator if possible).</li>
+            <li><strong>Do not substitute technical replicates:</strong> They assess technical variability but do not capture biological differences.</li>
+            <li><strong>Ensure high cell viability:</strong> Use samples with &gt;90% viability, since dead cells increase background and mitochondrial DNA contamination.</li>
+            <li><strong>Optimize nuclei isolation:</strong> Gentle and consistent nuclei preparation is critical; poor prep leads to high mitochondrial reads and low-quality signal.</li>
+            <li><strong>Use appropriate input cell numbers:</strong> Typically 50K-100K cells for bulk ATAC-seq; low-input protocols require extra care and optimization.</li>
+            <li><strong>Minimize mitochondrial contamination:</strong> Optimize lysis conditions and washing steps to reduce mtDNA carryover.</li>
+            <li><strong>Plan sequencing strategy carefully:</strong> Paired-end sequencing is required to capture fragment size distribution and nucleosome positioning.</li>
+            <li><strong>Ensure adequate sequencing depth:</strong> Approximately 50M paired-end reads per sample is optimal; &ge;15-20M usable fragments is a practical minimum.</li>
+            <li><strong>Avoid over-amplification during library prep:</strong> Excessive PCR introduces bias and reduces library complexity.</li>
+            <li><strong>Monitor library complexity early:</strong> Low complexity reduces usable signal and affects downstream interpretation.</li>
+            <li><strong>Include appropriate controls if needed:</strong> Consider spike-ins for experiments expecting global chromatin changes.</li>
+            <li><strong>Maintain consistency in reference materials:</strong> Use the same genome build and annotation across all samples.</li>
+            <li><strong>Standardize protocols across samples:</strong> Use the same kits, enzymes (Tn5), and workflows to reduce variability.</li>
+            <li><strong>Minimize batch effects:</strong> Distribute samples across library-prep batches and sequencing lanes.</li>
+            <li><strong>Balance experimental design:</strong> Avoid confounding batch with biological conditions; randomize samples where possible.</li>
+            <li><strong>Plan for expected signal features:</strong> ATAC-seq captures nucleosome-free regions and nucleosome phasing; ensure the design supports this resolution.</li>
+            <li><strong>Preserve fragment size information:</strong> Short fragments from open chromatin and periodic larger fragments from mono- and di-nucleosomes are biologically meaningful.</li>
+            <li><strong>Use fresh or properly preserved samples:</strong> Degradation affects chromatin accessibility and data quality.</li>
+            <li><strong>Consider cell-type heterogeneity:</strong> Bulk ATAC-seq averages signals, so mixed populations may obscure true accessibility patterns.</li>
+            <li><strong>Consider alternative approaches if needed:</strong> Use single-cell ATAC-seq for heterogeneous samples or rare populations.</li>
+          </ul>
+        </div>
+        <div>
           <h3>ChIP-seq</h3>
           <ul>
-            <li>Matched input controls for each sample/condition</li>
-            <li>&ge;30–50M reads for TFs; &ge;50–100M for broad marks</li>
-            <li>Spike-in normalization for absolute cross-condition comparisons</li>
-            <li>Validate antibody efficiency by qPCR before committing to sequencing</li>
-            <li>&ge;2 biological replicates for IDR reproducibility</li>
+            <li><strong>Replication and consistency:</strong> Use biological replicates (minimum 2, preferably 3 or more), and keep all samples processed under the same protocol, reagents, timing, and conditions.</li>
+            <li><strong>Antibody quality and validation:</strong> Use ChIP-grade, preferably ENCODE-validated antibodies; track lot numbers and revalidate new lots, with orthogonal validation when needed.</li>
+            <li><strong>Controls and normalization:</strong> Always include input DNA and matched controls; use spike-in controls when comparing global changes across conditions.</li>
+            <li><strong>Sample prep and sequencing design:</strong> Optimize crosslinking, fragmentation, and input amount; choose depth and read strategy based on target type, expected signal, and genome complexity.</li>
+            <li><strong>Bias reduction and alternatives:</strong> Minimize batch effects through balanced randomization, avoid PCR over-amplification, pilot key steps early, and consider CUT&amp;RUN or CUT&amp;Tag for low-input or weak-signal settings.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>CUT&amp;RUN</h3>
+          <ul>
+            <li><strong>Replication and consistency:</strong> Use biological replicates (minimum 2, preferably 3 or more), keep samples processed under identical conditions, and do not rely on technical replicates to represent biological variability.</li>
+            <li><strong>Antibody quality and sample integrity:</strong> Use validated antibodies compatible with CUT&amp;RUN, start with consistent input material, and use healthy, gently handled cells to preserve nuclear integrity and reduce background.</li>
+            <li><strong>Controls and normalization:</strong> Include IgG or no-antibody controls, match controls to each condition, use spike-in controls for normalization, and maintain consistent spike-in ratios across samples.</li>
+            <li><strong>Sequencing design and resolution:</strong> Sequence control samples more deeply than experimental samples, use adequate depth for target type and signal strength, prefer paired-end sequencing, and design library prep to capture the short fragments generated by CUT&amp;RUN.</li>
+            <li><strong>Bias reduction and assay strengths:</strong> Minimize batch effects through balanced sample distribution, standardize workflows, avoid PCR over-amplification, account for expected signal type, and leverage CUT&amp;RUN for low-input samples and weak binding targets because of its low background and high resolution.</li>
           </ul>
         </div>
         <div>
