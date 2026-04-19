@@ -761,7 +761,12 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
         <div>
           <h3>Single-cell RNA-seq</h3>
           <ul>
-            <li>TBD</li>
+            <li><strong>Replication and study design:</strong> Factor in at least 2 biological replicates per condition, but 3 or more if possible. Biological replicates are preferred over technical replicates, and in single-cell studies the biological replicate is the independent donor or sample, not the number of cells.</li>
+            <li><strong>Sample quality and handling:</strong> Start with the highest-quality sample possible, aim for high viability (&gt;80%, ideally 85-90% when feasible), minimize debris and aggregates, and use consistent dissociation and handling across samples. Fresh samples are often simplest for live-cell workflows, but nuclei, frozen tissue, and fixed PBMC workflows are also supported when appropriate.</li>
+            <li><strong>Cell recovery and gene-expression libraries:</strong> For standard 3' or 5' gene-expression experiments, a practical target is approximately 5,000-10,000 recovered cells per sample. Current 10x guidance uses 700-1,200 cells/&micro;l for approximately 500-10,000 recovered cells, with expected multiplet rates rising as recovery targets increase.</li>
+            <li><strong>Sequencing depth and assay add-ons:</strong> Start with a minimum of 20,000 read pairs per cell for gene-expression libraries, and increase depth only if pilot data or sequencing saturation indicate a clear benefit. If clonality or immune repertoire is part of the biological question, add TCR and/or BCR sequencing, typically with a 5' workflow, using a practical starting point of 5,000 read pairs per cell for the V(D)J library. If surface phenotype is important, add CITE-seq or cell-surface protein libraries so protein and transcript measurements are obtained from the same cell.</li>
+            <li><strong>Multiplexing and batch control:</strong> If multiple samples will be pooled in one experiment, consider antibody-based hashing, hashtag oligos, or on-chip multiplexing. Multiplexing can increase throughput, reduce batch effects, and help detect multiplets.</li>
+            <li><strong>Processing consistency:</strong> Ideally, all samples should be processed together and multiplexed in the same experiment. If samples must be processed in batches, ensure that each condition is represented in every dissociation, library-preparation, and sequencing batch so batch effects can be measured and minimized.</li>
           </ul>
         </div>
         <div>
