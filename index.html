@@ -744,18 +744,21 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
         <div>
           <h3>Whole-Exome Sequencing</h3>
           <ul>
-            <li>Include matched normal sample for somatic calling</li>
-            <li>&ge;100&times; mean on-target for somatic; &ge;30&times; for germline</li>
-            <li>Document exome capture kit and target BED file</li>
-            <li>Avoid FFPE when possible; use FFPE-specific kits if required</li>
+            <li><strong>Matched tumor and germline pairs:</strong> Matched tumor and germline samples are ideal for somatic variant calling. Somatic detection is still possible without a matched germline, but sensitivity and precision are reduced.</li>
+            <li><strong>Mouse-specific controls and filtering:</strong> For mouse studies, matched tumor and germline from the same individual is best. If cohort-matched germline samples are used, include at least two samples from the same generation, and note that somatic calling improves when several generations of backcrossing have reduced background variation.</li>
+            <li><strong>Sequencing depth guidelines:</strong> For somatic calling, aim for a mean target depth of &ge;100&times; for tumor samples and &ge;50&times; for germline samples. For germline-only variant detection, a depth of &ge;50&times; is recommended.</li>
+            <li><strong>Technical documentation:</strong> Always document the exome capture kit and obtain the corresponding target BED file, since both are essential for accurate alignment and exclusion of off-target noise.</li>
+            <li><strong>Study design consultation:</strong> For familial studies, sample selection strongly affects downstream linkage or subtraction analysis, so consultation before sequencing is encouraged to maximize statistical power.</li>
           </ul>
         </div>
         <div>
           <h3>Whole-Genome Sequencing</h3>
           <ul>
-            <li>&ge;30&times; for germline; &ge;60–100&times; for somatic with matched normal</li>
-            <li>PCR-free library prep preferred</li>
-            <li>Always include matched normal for somatic analyses</li>
+            <li><strong>Coverage requirements:</strong> Target a mean depth of &ge;30&times; for germline analysis. For somatic variant detection, aim for &ge;60-100&times; coverage, with higher depth often needed for low-frequency subclones or low-purity tumors.</li>
+            <li><strong>Matched normal samples:</strong> Always include a matched normal for somatic analyses. Somatic detection without one is technically possible, but matched tumor and germline pairs remain the best approach for sensitivity and for filtering biallelic germline variation.</li>
+            <li><strong>Structural and copy-number analysis:</strong> WGS is preferred over WES when structural variation or copy-number variation is a primary objective because it provides continuous coverage across genomic breakpoints that are often missed in capture-based exome workflows.</li>
+            <li><strong>Library preparation and assay advantages:</strong> PCR-free library preparation is preferred because it reduces GC bias and improves coverage uniformity across the genome, including difficult regions. With current cost reductions and improved accuracy, WGS is also the preferred method for germline variant detection, even when exonic variants are the main focus.</li>
+            <li><strong>Mouse model best practices:</strong> In mouse studies, matched tumor and germline from the same individual is ideal. If cohort-matched germline samples are used, they should come from the same generation, include at least two germline samples, and ideally be drawn from strains with several generations of backcrossing to reduce background variation.</li>
           </ul>
         </div>
         <div>
