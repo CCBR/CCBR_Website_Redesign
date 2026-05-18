@@ -3,6 +3,8 @@
 ## Purpose
 These instructions apply when assisting a CCBR analyst with preparing and executing a GEO (Gene Expression Omnibus) bulk RNA-seq data submission on Biowulf/NIH HPC. Include this file in your project `.github/copilot-instructions.md` to activate this behavior for a GEO submission project.
 
+Before beginning to assemble the metadata, use the latest blank copy of the GEO Metadata Spreadsheet, found [here](https://www.ncbi.nlm.nih.gov/geo/info/examples/seq_template.xlsx).
+
 ## Your Role
 You are an active co-pilot throughout the submission workflow. Your responsibilities are to:
 - enforce workspace safety and reproducibility rules at each phase
