@@ -794,79 +794,56 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
   <div id="resources-geo" style="display:none">
     <div class="card">
       <h2>GEO Submission Guidelines</h2>
-      <p>This page summarizes how investigators can prepare CCBR-supported NGS datasets for submission to NCBI GEO. It is intended as a practical checklist for assembling the study description, sample metadata, processed data, and raw sequencing files before formal upload. For authoritative requirements, always review the official <a href="https://www.ncbi.nlm.nih.gov/geo/info/submission.html" target="_blank" rel="noopener">GEO submission page</a> and the GEO guidance for <a href="https://www.ncbi.nlm.nih.gov/geo/info/seq.html" target="_blank" rel="noopener">high-throughput sequencing studies</a>.</p>
+      <p>This page is a landing point for CCBR GEO submission resources. Use it to download the detailed guide, the copilot instructions for AI-assisted preparation, and the optional metadata-drafting prompt. For authoritative repository requirements, review the official <a href="https://www.ncbi.nlm.nih.gov/geo/info/submission.html" target="_blank" rel="noopener">GEO submission page</a> and the GEO guidance for <a href="https://www.ncbi.nlm.nih.gov/geo/info/seq.html" target="_blank" rel="noopener">high-throughput sequencing studies</a>.</p>
 
-      <div class="co co-info" style="margin-top:var(--sp-5)">
-        <p><strong>Downloadable helper prompt:</strong> Users who want LLM assistance organizing GEO metadata can download this starter prompt: <a href="geo_submission_llm_prompt.md" download>GEO submission LLM prompt (Markdown)</a>.</p>
+      <h3>Downloadable Resources</h3>
+      <div class="g2" style="margin-top:var(--sp-4)">
+        <div class="ic">
+          <h4>Step-by-Step Guide</h4>
+          <p>Detailed CCBR workflow for preparing and submitting bulk RNA-seq datasets to GEO, including scope lock, sample continuity audit, workbook assembly, file staging, transfer, validation, and post-submission steps.</p>
+          <a href="geo_submission_guide.md" download>Download GEO Submission Guide (Markdown) &rarr;</a>
+        </div>
+        <div class="ic">
+          <h4>Copilot Instructions</h4>
+          <p>Structured instructions for using an AI assistant during GEO preparation, with emphasis on workspace safety, metadata validation, credential hygiene, and phase-based checkpoints.</p>
+          <a href="copilot-instructions.geo-submission.md" download>Download Copilot Instructions (Markdown) &rarr;</a>
+        </div>
+        <div class="ic">
+          <h4>LLM Metadata Prompt</h4>
+          <p>Optional starter prompt for drafting Series and Sample metadata from a manuscript draft, project folder, and sample details.</p>
+          <a href="geo_submission_llm_prompt.md" download>Download GEO Submission LLM Prompt (Markdown) &rarr;</a>
+        </div>
       </div>
 
       <h3>Before You Start</h3>
       <ul>
-        <li>Confirm that the study is appropriate for GEO and that the submission will be made using a My NCBI account associated with a GEO Profile</li>
-        <li>If the project includes multiple assay types, plan to submit each assay type separately unless GEO treats them as one integrated multi-omics submission</li>
-        <li>Assemble the final study title, summary, overall design, contributor list, and key protocol details before starting the spreadsheet</li>
-        <li>Create a clean submission folder that contains only the raw files, processed files, and support documents that will be referenced in GEO</li>
+        <li>Confirm the repository strategy first: GEO, SRA, or dbGaP decisions should be resolved before submission work begins</li>
+        <li>Lock the sample universe and manuscript scope before building the GEO workbook</li>
+        <li>Assemble a clean submission folder containing only the raw files, processed data files, and support documents relevant to the deposit</li>
+        <li>Gather the study title, summary, overall design, contributor list, and key protocol details before finalizing metadata</li>
       </ul>
 
-      <h3>Required GEO Submission Components</h3>
+      <h3>How to Use These Resources</h3>
       <ul>
-        <li><strong>Metadata spreadsheet:</strong> GEO requires a completed spreadsheet for each submitted data type</li>
-        <li><strong>Processed data files:</strong> GEO expects quantitative processed outputs that support the study findings</li>
-        <li><strong>Raw data files:</strong> GEO requires the original raw sequencing files, and GEO will transfer those raw files to SRA on the submitter's behalf</li>
-      </ul>
-
-      <h3>Metadata Spreadsheet</h3>
-      <ul>
-        <li>Complete all required study-level and sample-level fields in the GEO spreadsheet</li>
-        <li>Provide enough detail for a reader to understand the study, samples, biological groups, and protocols without relying on internal lab notes</li>
-        <li>Keep sample identifiers consistent across the spreadsheet, processed files, raw files, and manuscript draft</li>
-        <li>Spell out acronyms and structure sample characteristics clearly, preferably as `key: value` pairs</li>
-        <li>Include the reference assembly, assay details, and protocol information needed to interpret the processed results</li>
-        <li>Optional MD5 checksums may be included in the spreadsheet to help troubleshoot file corruption, but they should not be submitted as separate files</li>
-      </ul>
-
-      <h3>Processed Data Files</h3>
-      <ul>
-        <li>Submit quantitative processed data that support the conclusions of the study, such as count matrices, normalized abundance tables, peak files with quantitative values, or signal tracks</li>
-        <li>Do not treat intermediary alignment files such as BAM or SAM as the main processed-data deliverable for GEO</li>
-        <li>Use unique file names throughout the submission package</li>
-        <li>If you provide a matrix covering all samples, make sure the column headers match the sample or library names used in the metadata spreadsheet</li>
-        <li>Processed data should be complete rather than restricted to only significant results; for example, submit a full feature-by-sample matrix rather than only a differential hit list</li>
-      </ul>
-
-      <h3>Raw Data Files</h3>
-      <ul>
-        <li>Provide the original raw sequencing files generated by the instrument in accepted formats such as FASTQ</li>
-        <li>All raw file names must be unique and safe for public release, using only letters, numbers, hyphens, and underscores</li>
-        <li>Do not place sensitive information in raw file names</li>
-        <li>Paired-end runs must include complete matching file sets, and the files for a run must contain the same number of reads</li>
-        <li>If compressed files exceed GEO size limits, split them before submission, and do not use ZIP archives for upload</li>
-      </ul>
-
-      <h3>Special Notes for Single-cell and Multi-omics Studies</h3>
-      <ul>
-        <li>Single-cell studies require both raw and processed data, and GEO expects processed outputs at the cell level</li>
-        <li>For common 10x-style studies, multiplexed raw FASTQ files are typically preferred, while each GEO sample should still map to a unique set of raw files</li>
-        <li>Accepted processed outputs may include MEX files, H5 or HDF5 files, RDS objects, and VDJ-related outputs where relevant</li>
-        <li>If Cell Ranger aggregation or 10x feature-reference files were used, include those supporting files when applicable</li>
-        <li>For multi-omics studies, ensure each library type is labeled clearly and consistently in the metadata spreadsheet</li>
+        <li><strong>GEO Submission Guide:</strong> Use this as the primary human-readable workflow for preparing and executing the submission</li>
+        <li><strong>Copilot Instructions:</strong> Use this when working with an AI assistant so metadata checks, transfer hygiene, and documentation expectations stay consistent</li>
+        <li><strong>LLM Metadata Prompt:</strong> Use this when you want help drafting spreadsheet content from the project folder and manuscript draft, but review all fields manually before submission</li>
       </ul>
 
       <h3>How an LLM Can Help</h3>
-      <p>An LLM can serve as an organizational assistant while you prepare the GEO package, especially when the project folder contains many pipeline outputs and the manuscript draft is still being finalized.</p>
+      <p>An LLM can help organize submission materials, especially when a project folder contains many outputs and the manuscript draft is still evolving.</p>
       <ul>
-        <li>Point the LLM to the project folder so it can help inventory candidate raw files, processed outputs, count matrices, peak files, and support documents</li>
-        <li>Point the LLM to the manuscript draft so it can help extract the study title, summary, overall design, organism, assay type, and experimental groups for the GEO spreadsheet</li>
-        <li>Ask the LLM to cross-check whether sample IDs, replicate labels, filenames, and group names are used consistently across the manuscript, data files, and spreadsheet draft</li>
-        <li>Use the LLM to draft a checklist of missing metadata, such as protocol text, reference assembly, contributor names, processed-file descriptions, or assay-specific notes</li>
-        <li>When the manuscript will eventually cite the GEO accession, the LLM can help identify the sections that should be updated once the accession number is assigned</li>
+        <li>Inventory candidate raw files, processed outputs, and support documents</li>
+        <li>Extract study summary, overall design, organism, and sample-group structure from the manuscript draft</li>
+        <li>Cross-check filenames, sample IDs, and replicate labels across the workbook, project files, and manuscript</li>
+        <li>Flag missing metadata such as protocol text, reference assembly, contributor names, or processed-file descriptions</li>
       </ul>
 
       <div class="co co-ok" style="margin-top:var(--sp-5)">
-        <p><strong>Recommended workflow:</strong> Organize a final GEO-prep folder first, then use the downloadable prompt to have an LLM draft the Series and Sample metadata from the project files and manuscript draft. Review every field manually before submission, since the investigator remains responsible for the accuracy and completeness of the GEO package.</p>
+        <p><strong>Recommended workflow:</strong> Download the GEO submission guide first, use the copilot instructions if you want AI-assisted preparation, and use the optional prompt only for drafting metadata. The downloaded guide should be treated as the detailed source of truth for the step-by-step submission workflow.</p>
       </div>
 
-      <div class="co co-info" style="margin-top:var(--sp-5)"><p>If the study has unusual submission needs, such as prior SRA deposition, very large files, or non-standard processed outputs, review the official GEO guidance pages above and contact <a href="mailto:nciccbr@mail.nih.gov">nciccbr@mail.nih.gov</a> if you would like help organizing the submission package.</p></div>
+      <div class="co co-info" style="margin-top:var(--sp-5)"><p>If you would like help organizing a GEO package or reviewing metadata before submission, contact <a href="mailto:nciccbr@mail.nih.gov">nciccbr@mail.nih.gov</a> or visit CCBR office hours.</p></div>
     </div>
   </div>
 
