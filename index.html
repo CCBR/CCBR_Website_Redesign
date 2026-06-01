@@ -643,35 +643,38 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
               <th>#</th>
               <th>Data Type</th>
               <th>Pipeline</th>
-              <th>Full Name</th>
+              <th>GUI Available Since</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>1</td><td><span class="dtype">Bulk RNA-seq</span></td><td class="pname">RENEE</td><td><strong>R</strong>na s<strong>E</strong>quencing a<strong>N</strong>alysis pip<strong>E</strong>lin<strong>E</strong></td></tr>
-            <tr><td>2</td><td><span class="dtype">WES</span></td><td class="pname">XAVIER</td><td>e<strong>X</strong>ome <strong>A</strong>nalysis and <strong>V</strong>ariant explor<strong>ER</strong></td></tr>
-            <tr><td>3</td><td><span class="dtype">ATAC-seq</span></td><td class="pname">ASPEN</td><td><strong>A</strong>tac <strong>S</strong>eq <strong>P</strong>ip<strong>E</strong>li<strong>N</strong>e</td></tr>
-            <tr><td>4</td><td><span class="dtype">ChIP-seq</span></td><td class="pname">CHAMPAGNE</td><td><strong>CH</strong>rom<strong>A</strong>tin i<strong>M</strong>muno <strong>P</strong>recipit<strong>A</strong>tion sequencin<strong>G</strong> a<strong>N</strong>alysis pip<strong>E</strong>line</td></tr>
-            <tr><td>5</td><td><span class="dtype">CRISPR-seq</span></td><td class="pname">CRISPIN</td><td><strong>CRISP</strong>r screen sequencing analysis pipel<strong>IN</strong>e</td></tr>
-            <tr><td>6</td><td><span class="dtype">CUT&amp;RUN</span></td><td class="pname">CARLISLE</td><td><strong>C</strong>ut <strong>A</strong>nd <strong>R</strong>un ana<strong>L</strong>ys<strong>IS</strong> pipe<strong>L</strong>in<strong>E</strong></td></tr>
-            <tr><td>7</td><td><span class="dtype">circRNA-seq</span></td><td class="pname">CHARLIE</td><td><strong>C</strong>ircrnas in <strong>H</strong>ost <strong>A</strong>nd vi<strong>R</strong>uses ana<strong>L</strong>ysis p<strong>I</strong>p<strong>E</strong>line</td></tr>
-            <tr><td>8</td><td><span class="dtype">scRNA-seq</span></td><td class="pname">SINCLAIR</td><td><strong>SIN</strong>gle <strong>C</strong>el<strong>L</strong> <strong>A</strong>nalys<strong>I</strong>s <strong>R</strong>esource</td></tr>
-            <tr><td>9</td><td><span class="dtype">WGS</span></td><td class="pname">LOGAN</td><td>who<strong>L</strong>e gen<strong>O</strong>me-sequencin<strong>G</strong> <strong>A</strong>nalysis pipeli<strong>N</strong>e</td></tr>
-            <tr><td>10</td><td><span class="dtype">EV-seq</span></td><td class="pname">ESCAPE</td><td><strong>E</strong>xtracellular ve<strong>S</strong>i<strong>C</strong>les rn<strong>A</strong>seq <strong>P</strong>ipelin<strong>E</strong></td></tr>
+            <tr><td>1</td><td><span class="dtype">RNASeq</span></td><td class="pname">RENEE</td><td>July 14th 2023</td></tr>
+            <tr><td>2</td><td><span class="dtype">WESSeq</span></td><td class="pname">XAVIER</td><td>Sep 1st 2023</td></tr>
+            <tr><td>3</td><td><span class="dtype">ATACSeq</span></td><td class="pname">ASPEN</td><td>TBD</td></tr>
+            <tr><td>4</td><td><span class="dtype">ChIPSeq</span></td><td class="pname">CHAMPAGNE</td><td>TBD</td></tr>
+            <tr><td>5</td><td><span class="dtype">CRISPRSeq</span></td><td class="pname">CRISPIN</td><td>TBD</td></tr>
+            <tr><td>6</td><td><span class="dtype">CUT&amp;RunSeq</span></td><td class="pname">CARLISLE</td><td>TBD</td></tr>
+            <tr><td>7</td><td><span class="dtype">circRNASeq</span></td><td class="pname">CHARLIE</td><td>TBD</td></tr>
+            <tr><td>8</td><td><span class="dtype">scRNASeq</span></td><td class="pname">SINCLAIR</td><td>TBD</td></tr>
+            <tr><td>9</td><td><span class="dtype">WGSSeq</span></td><td class="pname">LOGAN</td><td>TBD</td></tr>
+            <tr><td>10</td><td><span class="dtype">EV-Seq</span></td><td class="pname">ESCAPE</td><td>TBD</td></tr>
+            <tr><td>11</td><td><span class="dtype">spatialSeq</span></td><td class="pname">SPENCER</td><td>TBD</td></tr>
           </tbody>
         </table>
       </div>
 
+      <p class="muted" style="margin-top:var(--sp-3)"><strong>Legend:</strong> GUI = Graphical User Interface</p>
       <ol class="pipe-notes-list">
         <li><strong>RENEE</strong> starts with raw FASTQ files and ends with a counts matrix. Downstream DEG support will be added at a later date. In the meantime, <a href="https://nidap.nih.gov" target="_blank">NIDAP</a> or <a href="http://bioinformatics.sdstate.edu/idep/" target="_blank">iDEP</a> can be used for DEG analysis.</li>
-        <li><strong>XAVIER</strong> (eXome Analysis and Variant explorER) will be soon available on Biowulf.</li>
-        <li><strong>ASPEN</strong> has limited support for differential ATAC-seq signal analysis. CCBR has other pipelines for footprinting analysis such as TOBIAS. Please reach out for details.</li>
-        <li><strong>CHAMPAGNE</strong> — CCBR plans to completely revamp ChIP-seq analysis. In the interim, we recommend using the <a href="https://github.com/ENCODE-DCC/chip-seq-pipeline2" target="_blank">ENCODE pipeline</a> on Biowulf for ChIP-seq analysis.</li>
-        <li><strong>CRISPIN</strong> (previously called CRUISE) performs CRISPRSeq analysis with MAGeCK, drugZ, and BAGEL2.</li>
-        <li><strong>CARLISLE</strong> supports human and mouse samples with (recommended) or without spike-ins.</li>
-        <li><strong>CHARLIE</strong> finds known and novel circRNAs in human/mouse + virus genomes. Differential circRNA analysis is planned for a future release.</li>
-        <li><strong>SINCLAIR</strong> addresses various single-cell modalities — e.g. single-cell expression, CITESeq, TCR-seq, and more.</li>
-        <li><strong>LOGAN</strong> will soon be CCBR's newest whole-genome sequencing offering.</li>
-        <li><strong>ESCAPE</strong> is designed for extracellular vesicle RNA-seq data.</li>
+        <li><strong>XAVIER</strong> (eXome Analysis and Variant explorER) will soon be available on Biowulf.</li>
+        <li><strong>ASPEN</strong> has limited support for differential ATACSeq signal analysis. CCBR has other pipelines for footprinting analysis such as TOBIAS. Please reach out for details.</li>
+        <li><strong>CHAMPAGNE</strong> (CHromAtin iMmuno PrecipitAtion sequencinG aNalysis pipEline) is being revamped. In the interim, we recommend using the <a href="https://github.com/ENCODE-DCC/chip-seq-pipeline2" target="_blank">ENCODE pipeline</a> on Biowulf for ChIPSeq analysis.</li>
+        <li><strong>CRISPIN</strong> (previously called CRUISE) supports CRISPRSeq analysis with MAGeCK, drugZ, and BAGEL2.</li>
+        <li><strong>CARLISLE</strong> supports human and mouse samples with recommended spike-ins or without spike-ins.</li>
+        <li><strong>CHARLIE</strong> finds known and novel circRNAs in human or mouse plus virus genomes. Differential circRNA analysis is planned for a future release.</li>
+        <li><strong>SINCLAIR</strong> addresses multiple single-cell modalities, including single-cell expression, CITE-seq, and TCR-seq.</li>
+        <li><strong>LOGAN</strong> is CCBR's whole-genome sequencing analysis offering.</li>
+        <li><strong>ESCAPE</strong> is the extracellular vesicles RNA-seq pipeline.</li>
+        <li><strong>SPENCER</strong> is the spatial sequencing resource.</li>
       </ol>
 
       <div class="co co-info" role="note" style="margin-top:var(--sp-5)">
