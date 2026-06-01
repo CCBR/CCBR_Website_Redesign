@@ -643,38 +643,37 @@ details p{margin-top:var(--sp-3);font-size:.875rem;color:var(--gray-70);line-hei
               <th>#</th>
               <th>Data Type</th>
               <th>Pipeline</th>
-              <th>GUI Available Since</th>
+              <th>Description</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>1</td><td><span class="dtype">RNASeq</span></td><td class="pname">RENEE</td><td>July 14th 2023</td></tr>
-            <tr><td>2</td><td><span class="dtype">WESSeq</span></td><td class="pname">XAVIER</td><td>Sep 1st 2023</td></tr>
-            <tr><td>3</td><td><span class="dtype">ATACSeq</span></td><td class="pname">ASPEN</td><td>TBD</td></tr>
-            <tr><td>4</td><td><span class="dtype">ChIPSeq</span></td><td class="pname">CHAMPAGNE</td><td>TBD</td></tr>
-            <tr><td>5</td><td><span class="dtype">CRISPRSeq</span></td><td class="pname">CRISPIN</td><td>TBD</td></tr>
-            <tr><td>6</td><td><span class="dtype">CUT&amp;RunSeq</span></td><td class="pname">CARLISLE</td><td>TBD</td></tr>
-            <tr><td>7</td><td><span class="dtype">circRNASeq</span></td><td class="pname">CHARLIE</td><td>TBD</td></tr>
-            <tr><td>8</td><td><span class="dtype">scRNASeq</span></td><td class="pname">SINCLAIR</td><td>TBD</td></tr>
-            <tr><td>9</td><td><span class="dtype">WGSSeq</span></td><td class="pname">LOGAN</td><td>TBD</td></tr>
-            <tr><td>10</td><td><span class="dtype">EV-Seq</span></td><td class="pname">ESCAPE</td><td>TBD</td></tr>
-            <tr><td>11</td><td><span class="dtype">spatialSeq</span></td><td class="pname">SPENCER</td><td>TBD</td></tr>
+            <tr><td>1</td><td><span class="dtype">RNASeq</span></td><td class="pname">RENEE</td><td>Comprehensive RNA-seq workflow that combines contamination screening, adapter trimming, two-pass STAR alignment, and RSEM quantification. It generates gene and isoform count matrices, fusion calls, and MultiQC-style quality summaries for cohort-level review.</td></tr>
+            <tr><td>2</td><td><span class="dtype">WESSeq</span></td><td class="pname">XAVIER</td><td>Whole-exome sequencing pipeline aligned to Broad-style best practices using a reproducible Snakemake execution model. It accepts FASTQ or BAM inputs and supports germline and somatic variant calling, CNV inference, and downstream annotation.</td></tr>
+            <tr><td>3</td><td><span class="dtype">ATACSeq</span></td><td class="pname">ASPEN</td><td>ATAC-seq analysis workflow for preliminary QC, peak calling, and differential chromatin accessibility testing. It is configured for Biowulf usage and provides standardized outputs for regulatory genomics interpretation.</td></tr>
+            <tr><td>4</td><td><span class="dtype">ChIPSeq</span></td><td class="pname">CHAMPAGNE</td><td>ChIP-seq analysis pipeline with support for configurable reference genomes and optional spike-in genome handling. It produces reproducible peak-centric outputs from aligned sequencing data and can be run through CCBR module-based workflows.</td></tr>
+            <tr><td>5</td><td><span class="dtype">CRISPRSeq</span></td><td class="pname">CRISPIN</td><td>CRISPR screen sequencing workflow designed for reproducible run setup and execution on Biowulf. It processes screening libraries into analysis-ready outputs suitable for guide-level and gene-level interpretation.</td></tr>
+            <tr><td>6</td><td><span class="dtype">CUT&amp;RunSeq</span></td><td class="pname">CARLISLE</td><td>CUT&amp;RUN pipeline that performs peak calling with MACS2, SEACR, and GoPeaks using spike-in-normalized FASTQ inputs. It is built in Snakemake and tuned for reproducible chromatin profiling on Biowulf.</td></tr>
+            <tr><td>7</td><td><span class="dtype">circRNASeq</span></td><td class="pname">CHARLIE</td><td>circRNA pipeline for detection, annotation, and quantification of host and viral circular RNAs. It orchestrates multiple circRNA callers in parallel, including CIRCExplorer2 and CIRI2-based paths, to support robust cross-method discovery.</td></tr>
+            <tr><td>8</td><td><span class="dtype">scRNASeq</span></td><td class="pname">SINCLAIR</td><td>Single-cell analysis resource supporting multiple next-generation modalities in a reproducible Nextflow framework. It starts from FASTQ or h5-aligned inputs, performs per-sample QC, and generates per-contrast integration reports.</td></tr>
+            <tr><td>9</td><td><span class="dtype">WGSSeq</span></td><td class="pname">LOGAN</td><td>Whole-genome sequencing pipeline based on Broad-aligned processing patterns and Nextflow orchestration. It calls and annotates germline and somatic variants, CNVs, and SVs with reproducible containerized execution.</td></tr>
+            <tr><td>10</td><td><span class="dtype">EV-Seq</span></td><td class="pname">ESCAPE</td><td>Extracellular vesicle RNA-seq workflow for EV-derived libraries from raw reads through analysis-ready quantification outputs. It emphasizes consistent QC and standardized processing for comparative EV transcriptomics.</td></tr>
+            <tr><td>11</td><td><span class="dtype">spatialSeq</span></td><td class="pname">SPENCER</td><td>Spatial sequencing workflow for processing location-aware transcriptomic measurements across tissue regions. It is designed to produce structured outputs for downstream spatial feature analysis, integration, and visualization.</td></tr>
           </tbody>
         </table>
       </div>
 
-      <p class="muted" style="margin-top:var(--sp-3)"><strong>Legend:</strong> GUI = Graphical User Interface</p>
       <ol class="pipe-notes-list">
-        <li><strong>RENEE</strong> starts with raw FASTQ files and ends with a counts matrix. Downstream DEG support will be added at a later date. In the meantime, <a href="https://nidap.nih.gov" target="_blank">NIDAP</a> or <a href="http://bioinformatics.sdstate.edu/idep/" target="_blank">iDEP</a> can be used for DEG analysis.</li>
-        <li><strong>XAVIER</strong> (eXome Analysis and Variant explorER) will soon be available on Biowulf.</li>
-        <li><strong>ASPEN</strong> has limited support for differential ATACSeq signal analysis. CCBR has other pipelines for footprinting analysis such as TOBIAS. Please reach out for details.</li>
-        <li><strong>CHAMPAGNE</strong> (CHromAtin iMmuno PrecipitAtion sequencinG aNalysis pipEline) is being revamped. In the interim, we recommend using the <a href="https://github.com/ENCODE-DCC/chip-seq-pipeline2" target="_blank">ENCODE pipeline</a> on Biowulf for ChIPSeq analysis.</li>
-        <li><strong>CRISPIN</strong> (previously called CRUISE) supports CRISPRSeq analysis with MAGeCK, drugZ, and BAGEL2.</li>
-        <li><strong>CARLISLE</strong> supports human and mouse samples with recommended spike-ins or without spike-ins.</li>
-        <li><strong>CHARLIE</strong> finds known and novel circRNAs in human or mouse plus virus genomes. Differential circRNA analysis is planned for a future release.</li>
-        <li><strong>SINCLAIR</strong> addresses multiple single-cell modalities, including single-cell expression, CITE-seq, and TCR-seq.</li>
-        <li><strong>LOGAN</strong> is CCBR's whole-genome sequencing analysis offering.</li>
-        <li><strong>ESCAPE</strong> is the extracellular vesicles RNA-seq pipeline.</li>
-        <li><strong>SPENCER</strong> is the spatial sequencing resource.</li>
+        <li>RENEE=Rna sEquencing aNalysis pipElinE.</li>
+        <li>XAVIER=eXome Analysis and Variant explorER.</li>
+        <li>ASPEN=Atac Seq PipEliNe.</li>
+        <li>CHAMPAGNE=CHromAtin iMmuno PrecipitAtion sequencinG aNalysis pipEline.</li>
+        <li>CRISPIN=CRISPr screen sequencing analysis pipelINe.</li>
+        <li>CARLISLE=Cut And Run anaLysIS pipeLinE.</li>
+        <li>CHARLIE=Circrnas in Host And viRuses anaLysis pIpEline.</li>
+        <li>SINCLAIR=SINgle CelL AnalysIs Resource.</li>
+        <li>LOGAN=whoLe genOme-sequencinG Analysis pipeliNe.</li>
+        <li>ESCAPE=Extracellular veSiCles rnAseq PipelinE.</li>
+        <li>SPENCER=SPatial sequENCing Resource.</li>
       </ol>
 
       <div class="co co-info" role="note" style="margin-top:var(--sp-5)">
